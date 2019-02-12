@@ -6,7 +6,7 @@ namespace Week02
     {
         static void Main(string[] args)
         {
-            // Create variables and do things with them!
+            Console.WriteLine("Hello World");
             
         }
     }
