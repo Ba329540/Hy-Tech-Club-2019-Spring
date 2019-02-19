@@ -17,7 +17,7 @@ namespace Week02
             Console.WriteLine("Hello! My name is " + userName);
             //Hello! My name is (za-CH)
             Console.WriteLine(String.Format("I am {0} years old and have {1} pets!", userAge, numberOfPets));
-            
+            Console.WriteLine(String.Format("I go to {0}", schoolAttended));
             //In-class work
             bool randBool = false;
             double randDouble = 3.14;
