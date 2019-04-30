@@ -1,14 +1,15 @@
 using System;
 
-namespace Week_10
+namespace CSharp101ProjectZB
 {
     class Program
     {
         static void Main(string[] args)
         {
+            int money = 100;
             Console.WriteLine("In this game, you make important life decisions.");
             for (int i = 0; i <= 0; i++)
-            {   
+            {
                 Console.WriteLine("Enter your name:");
                 string playerName = Console.ReadLine();
                 Console.WriteLine("Hello " + playerName + "!");
@@ -25,18 +26,17 @@ namespace Week_10
             if (codeInput == secretCode)
             {
                 Console.WriteLine("You get $1000 added to your bank account!");
-                int totalMoney = freeMoney + freeMoney;
-                
-            } else {
-                Console.WriteLine("Error!");
-                
+                int totalMoney = money + freeMoney;
             }
-            
+            else
+            {
+                Console.WriteLine("Error!");
+            }
+
             //All variables relating to the direct gameplay will go below:
-            int money = 100;
-            
+
             int ageAfterLoop = 10;
-            
+
             //Below is the incomes for one year
             int totalMoneyEarnedMcDs = 25000;
             int totalMoneyEarnedBills = 35000;
@@ -47,13 +47,13 @@ namespace Week_10
             int medSchoolTuition = 150000;
             //other vars:
             int moneyRemaining = 0;
-            
-            
+
+
 
             for (int age = 0; age <= 10; age++)
             {
                 Console.WriteLine("You have aged 1 year and are now " + age + " years old.");
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(500);
             }
 
             Console.WriteLine("You have a choice of the middle school you go to: (1)Go to public school, (2) go to private school.");
@@ -61,7 +61,8 @@ namespace Week_10
             if (schoolChoice == 1)
             {
                 Console.WriteLine("Welcome to Thomas Jefferson Junior High!");
-            } else if (schoolChoice == 2)
+            }
+            else if (schoolChoice == 2)
             {
                 Console.WriteLine("Welcome to Saint Peter Middle School!");
                 ageAfterLoop++;
@@ -69,7 +70,7 @@ namespace Week_10
                 System.Threading.Thread.Sleep(500);
                 Console.WriteLine("You hate Catholicism so you leave after only 1 year.");
             }
-            
+
             ageAfterLoop++;
             ageAfterLoop++;
             ageAfterLoop++;
@@ -91,19 +92,25 @@ namespace Week_10
                 {
                     Console.WriteLine("You are going to University and must pay $50000.");
                     moneyRemaining = money - universityTuition;
+                    Console.WriteLine(moneyRemaining);
                     UniversityJobs();
-                } else if (collegeToGoTo == 2)
+                }
+                else if (collegeToGoTo == 2)
                 {
                     Console.WriteLine("You are going to Medical School and must pay $150000.");
                     moneyRemaining = money - medSchoolTuition;
+                    Console.WriteLine(moneyRemaining);
                     MedSchoolJobs();
-                } else if (collegeToGoTo == 3)
+                }
+                else if (collegeToGoTo == 3)
                 {
                     Console.WriteLine("You are going to Community College and must pay $15000.");
                     moneyRemaining = money - comColTuition;
+                    Console.WriteLine(moneyRemaining);
                     ComColJobs();
                 }
-            } else if (collegeChoice == 2)
+            }
+            else if (collegeChoice == 2)
             {
                 Console.WriteLine("You big loser, not going to college! Well, you decide to get a job instead.");
                 System.Threading.Thread.Sleep(2000);
@@ -114,12 +121,14 @@ namespace Week_10
                     Console.WriteLine("You've been hired an you now make $9 an hour. You are working 40 hours per week");
                     int jobIncomeMcDs = money + totalMoneyEarnedMcDs;
                     LoseGame();
-                } else if (job == 2)
+                }
+                else if (job == 2)
                 {
                     Console.WriteLine("You've been hired and you now make $12 an hour. You are working 40 hours per week");
                     int jobIncomeBills = money + totalMoneyEarnedBills;
                     LoseGame();
-                } else if (job == 3)
+                }
+                else if (job == 3)
                 {
                     Console.WriteLine("You've been hired and you now make $15 an hour. You are working 40 hours per week");
                     int jobIncomeMechanic = money + totalMoneyEarnedMechanic;
@@ -146,25 +155,29 @@ namespace Week_10
                 Console.WriteLine("You've been hired as a Software Developer and now make $80000 per year");
                 int totalMoneyEarnedDeveloperIncome = money + developerIncome;
                 WinGame();
-            } else if (universityJobs == 2)
+            }
+            else if (universityJobs == 2)
             {
                 Console.WriteLine("You have landed a job at Baker's Small Business Solutions! You now make $85000 per year.");
                 int totalMoneyEarnedFinAdIncome = money + finAdIncome;
                 LoseGame();
-            } else if (universityJobs == 3)
+            }
+            else if (universityJobs == 3)
             {
                 Console.WriteLine("You have landed a job at Reighloth photography! You now make $65000 per year.");
                 int totalMoneyEarnedPhotoIncome = money + photoIncome;
                 LoseGame();
-            } else if (universityJobs == 4)
+            }
+            else if (universityJobs == 4)
             {
                 Console.WriteLine("You have landed a job at NASA as a mechanical engineer! You now make $110000 per year");
                 int totalMoneyEarnedMechEngIncome = money + mechEngIncome;
-                LoseGame();
+                System.Threading.Thread.Sleep(1000);
+                Mugged();
             }
-        } 
+        }
 
-        public static void ComColJobs() 
+        public static void ComColJobs()
         {
             int money = 100;
             //vars for comColJobs go here:
@@ -180,12 +193,15 @@ namespace Week_10
                 Console.WriteLine("You have landed a job as an Artist! You now make $45000 per year.");
                 int totalMoneyEarnedArtist = money + artistIncome;
                 LoseGame();
-            } else if (comColJobs == 2)
+            }
+            else if (comColJobs == 2)
             {
                 Console.WriteLine("You have landed a job at Chez Francois as a Sous Chef! You now make $65000 per year");
                 int totalMoneyEarnedChef = money + chefIncome;
-                LoseGame();
-            } else if (comColJobs == 3)
+                System.Threading.Thread.Sleep(1000);
+                Mugged();
+            }
+            else if (comColJobs == 3)
             {
                 Console.WriteLine("You have landed a job as an Interior Designer! You now make $55000 per year");
                 int totalMoneyEarnedInteriorDesigner = money + interDesignerIncome;
@@ -208,13 +224,16 @@ namespace Week_10
             {
                 Console.WriteLine("You have landed a job at Cleveland Clinic as a general surgeon! You now make $130000 per year.");
                 int totalMoneyEarnedSurgeon = money + surgeonIncome;
-                WinGame();
-            } else if (medSchoolJobs == 2)
+                System.Threading.Thread.Sleep(1000);
+                Mugged();
+            }
+            else if (medSchoolJobs == 2)
             {
                 Console.WriteLine("You have landed a job at Orthopaedic Associates as an Occupational Therapist! You now make $110000 per year");
                 int totalMoneyEarnedOccTherapist = money + occTherapistIncome;
                 LoseGame();
-            } else if (medSchoolJobs == 3)
+            }
+            else if (medSchoolJobs == 3)
             {
                 Console.WriteLine("You have landed a job at UH as a Pediatrician! You now make $120000 per year");
                 int totalMoneyEarnedPediat = money + pediatricianIncome;
@@ -232,14 +251,16 @@ namespace Week_10
             {
                 Console.WriteLine("You hand over all your money which is everything in your bank account, and he takes it and runs away.");
                 LoseGame();
-            } else if (muggedChoice == 2)
+            }
+            else if (muggedChoice == 2)
             {
                 Console.WriteLine("You run away as fast as you can and you are shot in the back");
                 LoseGame();
-            } else if (muggedChoice == 3)
+            }
+            else if (muggedChoice == 3)
             {
-                Console.WriteLine("You use your killer karate moves on him but kick yourself in the face. \n You die");
-                LoseGame();
+                Console.WriteLine("You use your killer karate moves on him and knock him out");
+                WinGame();
             }
         }
 
@@ -272,4 +293,3 @@ namespace Week_10
         }
     }
 }
-
