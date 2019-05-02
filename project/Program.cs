@@ -92,21 +92,24 @@ namespace CSharp101ProjectZB
                 {
                     Console.WriteLine("You are going to University and must pay $50000.");
                     moneyRemaining = money - universityTuition;
-                    Console.WriteLine(moneyRemaining);
+                    System.Threading.Thread.Sleep(500);
+                    Console.WriteLine("You have " + moneyRemaining + " dollars left.");
                     UniversityJobs();
                 }
                 else if (collegeToGoTo == 2)
                 {
                     Console.WriteLine("You are going to Medical School and must pay $150000.");
                     moneyRemaining = money - medSchoolTuition;
-                    Console.WriteLine(moneyRemaining);
+                    System.Threading.Thread.Sleep(500);
+                    Console.WriteLine("You have " + moneyRemaining + " dollars left.");
                     MedSchoolJobs();
                 }
                 else if (collegeToGoTo == 3)
                 {
                     Console.WriteLine("You are going to Community College and must pay $15000.");
                     moneyRemaining = money - comColTuition;
-                    Console.WriteLine(moneyRemaining);
+                    System.Threading.Thread.Sleep(500);
+                    Console.WriteLine("You have " + moneyRemaining + " dollars left.");
                     ComColJobs();
                 }
             }
@@ -135,6 +138,8 @@ namespace CSharp101ProjectZB
                     WinGame();
                 }
             }
+          //continue here:
+          //continue here:  
         }
 
         public static void UniversityJobs()
@@ -237,7 +242,7 @@ namespace CSharp101ProjectZB
             {
                 Console.WriteLine("You have landed a job at UH as a Pediatrician! You now make $120000 per year");
                 int totalMoneyEarnedPediat = money + pediatricianIncome;
-                WinGame();
+                PlayFizzBuzz();
             }
         }
 
@@ -264,13 +269,60 @@ namespace CSharp101ProjectZB
             }
         }
 
+        public static void PlayFizzBuzz()
+        {
+          for (int z = 0; z <= 3; z++)
+          {
+          Console.WriteLine("Let's play FizzBuzz!");
+          Console.WriteLine("Type in a number, any number!");
+          int inputFB = Convert.ToInt32(Console.ReadLine());
+          if (inputFB % 3 == 0 && inputFB % 5 == 0)
+          {
+            Console.WriteLine("FizzBuzz");
+          } else if (inputFB % 3 == 0)
+          {
+            Console.WriteLine("Fizz");
+          } else if (inputFB % 5 == 0)
+          {
+            Console.WriteLine("Buzz");
+          } else {
+            Console.WriteLine("How much wood could a woodchuck chuck if a woodchuck could chuck wood");
+          }
+          }
+          WinGame();
+        }
+
+        public static void Robbed()
+        {
+          Console.WriteLine("One day you come home from work to find everything in your house is gone! \n what do you do?");
+          Console.WriteLine("(1)Call 911; (2)Cry in despair; (3)Track down the robbers");
+          int robbedChoice = Convert.ToInt32(Console.ReadLine());
+          if (robbedChoice == 1)
+          {
+            Console.WriteLine("You decide to call 911.");
+            System.Threading.Thread.Sleep(500);
+            Console.WriteLine("You are put on hold and die of old age.");
+            LoseGame();
+          } else if (robbedChoice == 2)
+          {
+            Console.WriteLine("You begin crying in despair.");
+            System.Threading.Thread.Sleep(500);
+            Console.WriteLine("Oh, my xBox, oh, my cheerios!");
+            LoseGame();
+          } else if (robbedChoice == 3)
+          {
+            Console.WriteLine("You decide to try and track down the robbers.");
+            Mugged();
+          }
+        }
+
         public static void WinGame()
         {
             Console.WriteLine("You have won the game!");
             System.Threading.Thread.Sleep(3000);
             Console.WriteLine("Credits: \n Programmed and Designed By Zachary Baker");
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("As this is a small project, I did not finish the game because coming up with a big storyline for the whole thing is exhausting. I hope to finish it at some point.");
+            Console.WriteLine("As this is a small project, I did not finish the game because coming up with a big storyline for the whole thing is difficult. I hope to finish it at some point.");
             System.Threading.Thread.Sleep(3500);
             Console.WriteLine("The secret code is freemoney.");
             System.Threading.Thread.Sleep(1000);
